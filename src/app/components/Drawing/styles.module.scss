@@ -1,0 +1,41 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.silhouette {
+  z-index: 1;
+  position: absolute;
+  width: 540px;
+  height: 850px;
+
+  @include desktop-s {
+    width: 480px;
+    height: 750px;
+  }
+
+  @include tablet {
+    width: 475px;
+    height: 740px;
+  }
+
+  @include mobile-l {
+    width: 375px;
+    height: 580px;
+  }
+
+  @include mobile-m {
+    width: 322px;
+    height: 500px;
+  }
+
+  .path {
+    stroke-dasharray: 2113;
+    stroke-dashoffset: 2113;
+    animation: dash 6s linear forwards;
+  }
+}
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }

@@ -1,0 +1,92 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.main {
+  background: linear-gradient($pink 22%, $purple 64%, $blue 100%);
+}
+
+.textBlock {
+  z-index: 2;
+  padding-bottom: 160px;
+
+  @include mobile-m {
+    padding-bottom: 80px;
+  }
+}
+
+.title {
+  font-family: "Allura";
+  font-size: 70px;
+  line-height: 70px;
+
+  @include tablet {
+    font-size: 60px;
+    line-height: 65px;
+  }
+
+  @include mobile-l {
+    font-size: 45px;
+    line-height: 50px;
+  }
+
+  @include mobile-m {
+    font-size: 40px;
+    line-height: 45px;
+  }
+}
+
+.subtitlesWrapper {
+  font-family: "Menlo";
+}
+
+.subtitle {
+  overflow: hidden;
+  border-right: 10px solid $white;
+  white-space: nowrap;
+  animation: typing 3s steps(35, end) forwards, blink 1s infinite;
+  font-size: 25px;
+  line-height: 28px;
+
+  @include mobile-l {
+    border-right-width: 5px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.separator {
+  width: 100px;
+  height: 2px;
+  background-color: $white;
+
+  @include mobile-l {
+    width: 45px;
+  }
+}
+
+.cta {
+  font-size: 15px;
+  cursor: pointer;
+
+  @include mobile-l {
+    font-size: 12px;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: $white;
+  }
+}

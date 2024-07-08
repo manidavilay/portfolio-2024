@@ -3,6 +3,11 @@
 
 .main {
   background: linear-gradient($pink 22%, $purple 64%, $blue 100%);
+
+  &.isDoneLoading {
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+  }
 }
 
 .textBlock {
@@ -43,7 +48,7 @@
   overflow: hidden;
   border-right: 10px solid $white;
   white-space: nowrap;
-  animation: typing 3s steps(35, end) forwards, blink 1s infinite;
+  animation: typing 3.75s steps(40, end) forwards, blink 1s infinite;
   font-size: 25px;
   line-height: 28px;
 

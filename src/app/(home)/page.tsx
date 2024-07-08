@@ -1,24 +1,26 @@
-"use client"
-import {useState } from "react";
-import Loading from '../components/Loading/Loading';
+"use client";
+import { useEffect, useState } from "react";
+import Loading from "../components/Loading/Loading";
 
 export default function Home() {
-  const [isLoadingVisible, setIsLoadingVisible] = useState(true)
+  const [isLoadingVisible, setIsLoadingVisible] = useState(true);
+  const [isDoneLoading, setIsDoneLoading] = useState(false);
 
-  console.log(111, isLoadingVisible)
-  
-  const toggleLoading = () => {
-    setIsLoadingVisible(!isLoadingVisible)
-  }
+  useEffect(() => {
+    setTimeout(() => {
+      setIsDoneLoading(!isDoneLoading);
+    }, 6100);
+    setTimeout(() => {
+      setIsLoadingVisible(!isLoadingVisible);
+    }, 7200);
+  }, []);
 
   return (
     <main>
       {isLoadingVisible ? (
-        <Loading toggleLoading={toggleLoading} />
+        <Loading isDoneLoading={isDoneLoading} />
       ) : (
-        <p>
-          This is the homepage
-        </p>
+        <p>This is the homepage</p>
       )}
     </main>
   );

@@ -1,20 +1,19 @@
 "use client";
-import { useState } from "react";
 import classNames from "classnames";
 import Drawing from "../Drawing/Drawing";
 import styles from "./styles.module.scss";
 
 interface Props {
-  toggleLoading: () => void;
+  isDoneLoading: boolean;
 }
 
-const Loading = ({ toggleLoading }: Props) => {
-  const handleCTA = () => {
-    toggleLoading();
-  };
-
+const Loading = ({ isDoneLoading }: Props) => {
   return (
-    <section className={classNames(styles.main, "w-full h-screen")}>
+    <section
+      className={classNames(styles.main, "w-full h-screen", {
+        [styles.isDoneLoading]: isDoneLoading,
+      })}
+    >
       <div
         className={classNames(
           styles.container,
@@ -38,20 +37,17 @@ const Loading = ({ toggleLoading }: Props) => {
             <div
               className={classNames(
                 styles.separator,
-                "mt-2 mb-4 sm:mt-3 sm:mb-6"
+                "mt-4 mb-7 sm:mt-5 sm:mb-8"
               )}
             />
-            <h2 className={classNames(styles.subtitle, "mb-10")}>
+            <h2 className={classNames(styles.subtitle)}>
               front-end web developer
             </h2>
-            <p className={styles.cta} onClick={handleCTA}>
-              click here to enter
-            </p>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 };
 
 export default Loading;

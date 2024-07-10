@@ -10,7 +10,7 @@ interface Props {
 const Loading = ({ isDoneLoading }: Props) => {
   return (
     <section
-      className={classNames(styles.main, "w-full h-screen", {
+      className={classNames(styles.main, "absolute w-full h-screen", {
         [styles.isDoneLoading]: isDoneLoading,
       })}
     >

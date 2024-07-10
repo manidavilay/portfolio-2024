@@ -3,9 +3,10 @@
 
 .main {
   background: linear-gradient($pink 22%, $purple 64%, $blue 100%);
+  z-index: 2;
 
   &.isDoneLoading {
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.75s ease-in-out;
     opacity: 0;
   }
 }

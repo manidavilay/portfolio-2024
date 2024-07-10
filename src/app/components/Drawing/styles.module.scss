@@ -4,12 +4,12 @@
 .silhouette {
   z-index: 1;
   position: absolute;
-  width: 540px;
-  height: 850px;
+  width: 520px;
+  height: 810px;
 
   @include desktop-s {
     width: 480px;
-    height: 750px;
+    height: 725px;
   }
 
   @include tablet {

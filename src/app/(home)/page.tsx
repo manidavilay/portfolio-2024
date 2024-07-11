@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import classNames from "classnames";
 import Loading from "../components/Loading/Loading";
 import Header from "../components/Header/Header";
+import Footer from '../components/Footer/Footer';
 import styles from "./styles.module.scss";
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
         <Header />
         <div className="w-9/12 m-auto">
           <div
-            className={classNames(styles.homeContainer__titleWrapper, "mt-72")}
+            className={classNames(styles.homeContainer__titleWrapper, "mt-56")}
           >
             <h2 className={classNames(styles.homeContainer__title)}>
               manida vilay
@@ -37,13 +38,14 @@ export default function Home() {
           <p
             className={classNames(
               styles.homeContainer__text,
-              "mt-72 text-right"
+              "mt-48 text-right"
             )}
           >
             want to know what i am listening to ? <br />
             <b>click on my headphones</b>
           </p>
         </div>
+      <Footer/>
       </section>
     </main>
   );

@@ -1,13 +1,13 @@
 @import "../../utils/variables.scss";
 
 .logo {
-    left: 40px;
+    left: 0;
 }
 
 .menu {
     font-family: 'Menlo';
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     color: $white;
 
     &__button {

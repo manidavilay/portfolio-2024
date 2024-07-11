@@ -2,7 +2,7 @@
 
 .homeContainer {
     z-index: 1;
-    background-image: url(/images/background.gif);
+    background-image: url(/assets/images/background.gif);
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -16,15 +16,15 @@
     }
 
     &__title {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     &__subtitle {
         font-style: italic;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     &__text {
-        font-size: 16px;
+        font-size: 14px;
     }
 }

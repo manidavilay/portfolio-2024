@@ -31,14 +31,14 @@ export default function Home() {
             <h2 className={classNames(styles.homeContainer__title)}>
               manida vilay
             </h2>
-            <h3 className={classNames(styles.homeContainer__subtitle, "mt-3")}>
+            <h3 className={classNames(styles.homeContainer__subtitle, "mt-1")}>
               front-end web developer
             </h3>
           </div>
           <p
             className={classNames(
               styles.homeContainer__text,
-              "mt-48 text-right"
+              "mt-56 text-right"
             )}
           >
             want to know what i am listening to ? <br />

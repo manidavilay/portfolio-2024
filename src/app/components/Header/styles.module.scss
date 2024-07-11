@@ -1,0 +1,16 @@
+@import "../../utils/variables.scss";
+
+.logo {
+    left: 40px;
+}
+
+.menu {
+    font-family: 'Menlo';
+    font-weight: bold;
+    font-size: 18px;
+    color: $white;
+
+    &__button {
+        margin: 0 50px;
+    }
+}

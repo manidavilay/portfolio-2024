@@ -27,7 +27,7 @@
     height: 500px;
   }
 
-  .path {
+  &__path {
     stroke-dasharray: 2113;
     stroke-dashoffset: 2113;
     animation: dash 6s linear forwards;

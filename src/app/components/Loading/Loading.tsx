@@ -14,33 +14,23 @@ const Loading = ({ isDoneLoading }: Props) => {
         [styles.isDoneLoading]: isDoneLoading,
       })}
     >
-      <div
-        className={classNames(
-          styles.container,
-          "relative flex justify-center items-center h-full"
-        )}
-      >
+      <div className="relative flex justify-center items-center h-full">
         <Drawing />
         <div
           className={classNames(
-            styles.textBlock,
+            styles.textWrapper,
             "h-full flex flex-col items-center justify-center text-white"
           )}
         >
-          <h1 className={styles.title}>Manida Vilay</h1>
-          <div
-            className={classNames(
-              styles.subtitlesWrapper,
-              "flex flex-col items-center justify-center"
-            )}
-          >
+          <h1 className={styles.textWrapper__title}>Manida Vilay</h1>
+          <div className="flex flex-col items-center justify-center">
             <div
               className={classNames(
-                styles.separator,
+                styles.textWrapper__separator,
                 "mt-4 mb-7 sm:mt-5 sm:mb-8"
               )}
             />
-            <h2 className={classNames(styles.subtitle)}>
+            <h2 className={classNames(styles.textWrapper__subtitle)}>
               front-end web developer
             </h2>
           </div>

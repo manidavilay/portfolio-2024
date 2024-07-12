@@ -15,8 +15,16 @@
     height: 100px;
   }
 
+  @include mobile-l {
+    height: 70px;
+  }
+
   &__links {
     font-size: 12px;
+
+    @include mobile-l {
+      font-size: 10px;
+    }
   }
 
   &__copyright {

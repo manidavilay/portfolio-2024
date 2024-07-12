@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <footer className={classNames(styles.footer, "absolute")}>
-      <div className="flex justify-between w-11/12 h-full mx-auto pb-8">
+      <div className="flex justify-between md:flex-row flex-col md:items-end items-center w-11/12 h-full mx-auto md:pb-8 sm:pb-6 pb-4">
         <div
           className={classNames(
             styles.footer__links,
@@ -20,7 +20,7 @@ const Footer = () => {
         >
           <Link
             href="mailto:vilaymanida@gmail.com"
-            className="inline-flex items-center"
+            className="inline-flex items-center md:justify-start justify-center"
           >
             <Image
               src="/assets/icons/mail.svg"
@@ -33,7 +33,7 @@ const Footer = () => {
           </Link>
           <Link
             href="https://www.linkedin.com/in/manida-vilay/"
-            className="inline-flex items-center"
+            className="inline-flex items-center md:justify-start justify-center"
             target="_blank"
           >
             <Image

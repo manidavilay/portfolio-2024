@@ -5,7 +5,7 @@ const useIsMobile = (breakpoint = 768) => {
 
     useEffect(() => {
         const updateMedia = () => {
-            setIsMobile(window.innerWidth <= breakpoint);
+            setIsMobile(window.innerWidth < breakpoint);
         }
 
         updateMedia();

@@ -24,7 +24,7 @@ export default function Home() {
       {isLoadingVisible && <Loading isDoneLoading={isDoneLoading} />}
       <section className={classNames(styles.homeContainer, "absolute")}>
         <Header />
-        <div className="md:w-9/12 w-11/12 m-auto">
+        <div className="sm:w-11/12 lg:w-9/12 w-10/12 m-auto">
           <div
             className={classNames(styles.homeContainer__titleWrapper)}
           >

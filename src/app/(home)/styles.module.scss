@@ -1,4 +1,5 @@
 @import "../utils/variables.scss";
+@import "../utils/mixins.scss";
 
 .homeContainer {
     z-index: 1;
@@ -11,8 +12,13 @@
     color: $white;
 
     &__titleWrapper {
+        margin-top: 300px;
         font-weight: bold;
         line-height: 20px;
+
+        @include tablet {
+            margin-top: 100px;
+        }
     }
 
     &__title {
@@ -25,6 +31,23 @@
     }
 
     &__text {
+        margin-top: 300px;
         font-size: 14px;
+
+        @include desktop-m {
+            margin-top: 170px;
+        }
+
+        @include tablet {
+            margin-top: 500px;
+        }
+
+        @include mobile-l {
+            margin-top: 450px;
+        }
+
+        @include mobile-m {
+            margin-top: 250px;
+        }
     }
 }

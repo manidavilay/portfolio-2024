@@ -1,10 +1,19 @@
 @import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
 
 .footer {
   bottom: 0;
   width: 100%;
   height: 210px;
   background: linear-gradient(rgba($dark-purple, 0.1), rgba($dark-blue, 1));
+
+  @include desktop-s {
+    height: 180px;
+  }
+
+  @include tablet {
+    height: 100px;
+  }
 
   &__links {
     font-size: 12px;

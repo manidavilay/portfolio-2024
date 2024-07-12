@@ -24,9 +24,9 @@ export default function Home() {
       {isLoadingVisible && <Loading isDoneLoading={isDoneLoading} />}
       <section className={classNames(styles.homeContainer, "absolute")}>
         <Header />
-        <div className="w-9/12 m-auto">
+        <div className="md:w-9/12 w-11/12 m-auto">
           <div
-            className={classNames(styles.homeContainer__titleWrapper, "mt-56")}
+            className={classNames(styles.homeContainer__titleWrapper)}
           >
             <h2 className={classNames(styles.homeContainer__title)}>
               manida vilay
@@ -38,7 +38,7 @@ export default function Home() {
           <p
             className={classNames(
               styles.homeContainer__text,
-              "mt-56 text-right"
+              "text-right"
             )}
           >
             want to know what i am listening to ? <br />

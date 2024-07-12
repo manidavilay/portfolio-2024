@@ -1,15 +1,23 @@
 "use client";
 import classNames from "classnames";
+import useIsMobile from "../../hooks/useIsMobile";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "../Logo/Logo";
 import styles from "./styles.module.scss";
 
 const Footer = () => {
+  const isMobile = useIsMobile();
+
   return (
     <footer className={classNames(styles.footer, "absolute")}>
       <div className="flex justify-between w-11/12 h-full mx-auto pb-8">
-        <div className={classNames(styles.footer__links, "flex flex-col justify-end")}>
+        <div
+          className={classNames(
+            styles.footer__links,
+            "flex flex-col justify-end"
+          )}
+        >
           <Link
             href="mailto:vilaymanida@gmail.com"
             className="inline-flex items-center"
@@ -41,10 +49,14 @@ const Footer = () => {
         <p className={classNames(styles.footer__copyright, "flex items-end")}>
           © designed, animated and coded by manida vilay - 2024
         </p>
-        <div className="flex flex-col items-center justify-end">
-          <Logo logoLink="/resume.pdf" />
-          <p className={classNames(styles.footer__resume, "mt-2")}>see resume here</p>
-        </div>
+        {!isMobile && (
+          <div className="flex flex-col items-center justify-end">
+            <Logo logoLink="/resume.pdf" />
+            <p className={classNames(styles.footer__resume, "mt-2")}>
+              see resume here
+            </p>
+          </div>
+        )}
       </div>
     </footer>
   );

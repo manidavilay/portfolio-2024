@@ -4,19 +4,19 @@
 .footer {
   bottom: 0;
   width: 100%;
-  height: 210px;
-  background: linear-gradient(rgba($dark-purple, 0.1), rgba($dark-blue, 1));
+  height: 150px;
+  background: linear-gradient(rgba($dark-purple, 0.15), rgba($dark-blue, 1));
 
   @include desktop-s {
     height: 180px;
   }
 
   @include tablet {
-    height: 100px;
+    height: 130px;
   }
 
   @include mobile-l {
-    height: 70px;
+    height: 110px;
   }
 
   &__links {
@@ -32,7 +32,12 @@
     font-style: italic;
   }
 
-  &__resume {
-    font-size: 12px;
+  &__logoWrapper {
+    margin-left: 2px;
+  }
+
+  &__logo {
+    height: 20px;
+    border: 1px solid $white;
   }
 }

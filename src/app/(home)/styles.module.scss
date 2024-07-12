@@ -82,12 +82,12 @@
             margin-top: 350px;
         }
 
-        @media (min-width: 414px) and (min-height: 896px) { // specific for iphone xr
-            margin-top: 420px;
+        @media (width: 414px) and (height: 736px) { // specific for iphone 6/7/8 plus
+            margin-top: 290px;
         }
 
         @include mobile-m {
-            margin-top: 320px;
+            margin-top: 280px;
             font-size: 10px;
         }
 

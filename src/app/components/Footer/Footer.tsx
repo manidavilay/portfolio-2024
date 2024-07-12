@@ -1,9 +1,8 @@
 "use client";
 import classNames from "classnames";
-import useIsMobile from "../../hooks/useIsMobile";
+import useIsMobile from "@/app/hooks/useIsMobile";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../Logo/Logo";
 import styles from "./styles.module.scss";
 
 const Footer = () => {
@@ -15,7 +14,7 @@ const Footer = () => {
         <div
           className={classNames(
             styles.footer__links,
-            "flex flex-col justify-end"
+            "flex flex-col justify-end md:mb-0 mb-4"
           )}
         >
           <Link
@@ -24,8 +23,8 @@ const Footer = () => {
           >
             <Image
               src="/assets/icons/mail.svg"
-              width="15"
-              height="15"
+              width={!isMobile ? "25" : "20"}
+              height={!isMobile ? "25" : "20"}
               alt="Logo mail"
               className="mr-1"
             />
@@ -33,30 +32,36 @@ const Footer = () => {
           </Link>
           <Link
             href="https://www.linkedin.com/in/manida-vilay/"
-            className="inline-flex items-center md:justify-start justify-center"
+            className="inline-flex items-center md:justify-start justify-center mt-1"
             target="_blank"
           >
             <Image
               src="/assets/icons/linkedin.svg"
-              width="15"
-              height="15"
+              width={!isMobile ? "25" : "20"}
+              height={!isMobile ? "25" : "20"}
               alt="Linkedin logo"
               className="mr-1"
             />
             linkedin
           </Link>
+          <Link
+            href="/resume.pdf"
+            target="_blank"
+            className={classNames(styles.footer__logoWrapper, "inline-flex items-center md:justify-start justify-center md:mt-2 mt-1")}
+          >
+            <Image
+              src="/assets/logos/mv-squared-logo.svg"
+              width="20"
+              height="20"
+              alt="Manida Vilay's squared logo"
+              className={classNames(styles.footer__logo, "mr-2")}
+            />
+            download resume here
+          </Link>
         </div>
         <p className={classNames(styles.footer__copyright, "flex items-end")}>
           © designed, animated and coded by manida vilay - 2024
         </p>
-        {!isMobile && (
-          <div className="flex flex-col items-center justify-end">
-            <Logo logoLink="/resume.pdf" />
-            <p className={classNames(styles.footer__resume, "mt-2")}>
-              see resume here
-            </p>
-          </div>
-        )}
       </div>
     </footer>
   );

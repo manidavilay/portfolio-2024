@@ -4,11 +4,13 @@ import classNames from "classnames";
 import Loading from "../components/Loading/Loading";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import About from "../components/About/About";
 import styles from "./styles.module.scss";
 
 export default function Home() {
   const [isLoadingVisible, setIsLoadingVisible] = useState(true);
   const [isDoneLoading, setIsDoneLoading] = useState(false);
+  const [isItemOpened, setIsItemOpened] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -23,7 +25,7 @@ export default function Home() {
     <main className="relative">
       {isLoadingVisible && <Loading isDoneLoading={isDoneLoading} />}
       <section className={classNames(styles.homeContainer, "absolute")}>
-        <Header />
+        <Header isItemOpened={isItemOpened} setIsItemOpened={setIsItemOpened} />
         <div className="w-10/12 m-auto">
           <div className={classNames(styles.homeContainer__titleWrapper)}>
             <h2 className={classNames(styles.homeContainer__title)}>
@@ -38,6 +40,9 @@ export default function Home() {
             <b>click on my headphones</b>
           </p>
         </div>
+        {isItemOpened && (
+          <About isItemOpened={isItemOpened} setIsItemOpened={setIsItemOpened} />
+        )}
         <Footer />
       </section>
     </main>

@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main className="relative">
       {isLoadingVisible && <Loading isDoneLoading={isDoneLoading} />}
-      <section className={classNames(styles.homeContainer, "absolute")}>
+      <section className={classNames(styles.homeContainer, "absolute overflow-hidden")}>
         <Header isItemOpened={isItemOpened} setIsItemOpened={setIsItemOpened} />
         <div className="w-10/12 m-auto">
           <div className={classNames(styles.homeContainer__titleWrapper)}>

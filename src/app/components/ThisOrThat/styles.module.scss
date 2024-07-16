@@ -1,0 +1,11 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.thisOrThat {
+    z-index: 1;
+    width: 300px;
+    height: 390px;
+    background-color: $purple2;
+    border-radius: 50px;
+    font-size: 14px;
+}

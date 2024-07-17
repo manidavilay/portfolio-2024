@@ -1,0 +1,47 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.closeBtn {
+    top: 60px;
+    left: 70px;
+    width: 20px;
+    height: 20px;
+
+    @include tablet {
+        top: 40px;
+        left: 40px;
+    }
+
+    @include mobile-l {
+        top: 30px;
+        width: 12px;
+        height: 12px;
+    }
+
+    &__cross {
+        width: 100%;
+        height: 2px;
+        background-color: $white;
+    
+        &--left {
+            transition: transform 0.3s ease-in-out;
+            transform: rotate(45deg);
+    
+            &.isHovered {
+                transition: transform 0.3s ease-in-out;
+                transform: rotate(90deg);
+            }
+        }
+
+        &--right {
+            transition: transform 0.3s ease-in-out;
+            transform: rotate(-45deg);
+    
+            &.isHovered {
+                transition: transform 0.3s ease-in-out;
+                transform: rotate(0);
+            }
+        }
+    
+    }
+}

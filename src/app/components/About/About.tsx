@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import classNames from "classnames";
 import useIsMobile from "@/app/hooks/useIsMobile";
 import Image from "next/image";
+import CloseButton from "../CloseButton/CloseButton";
 import ThisOrThat from "../ThisOrThat/ThisOrThat";
 import styles from "./styles.module.scss";
 
@@ -89,17 +90,7 @@ const About = ({ isItemOpened, setIsItemOpened }: Props) => {
       })}
       onTransitionEnd={aboutTranslateEnd}
     >
-      <button
-        className={classNames(styles.about__closeButton, "absolute")}
-        onClick={closeMenuItem}
-      >
-        <Image
-          src="/assets/icons/cross.svg"
-          width="15"
-          height="15"
-          alt="Closing cross icon"
-        />
-      </button>
+      <CloseButton closeItem={closeMenuItem} />
       <div className="relative flex items-center md:flex-row flex-col w-10/12 mx-auto">
       <div className="flex flex-col items-center lg:w-4/12 md:w-6/12 w-12/12 md:mr-10 mr-0 md:mb-0 sm:mb-8 mb-8">
         <div className={classNames((styles.about__avatarBlock), "relative")} onClick={touchAvatar} onMouseEnter={mouseEnterAvatar} onMouseLeave={mouseLeaveAvatar}>
@@ -120,7 +111,7 @@ const About = ({ isItemOpened, setIsItemOpened }: Props) => {
           )}
         </div>
         {!isMobile && (
-          <p className={classNames(styles.about__avatarCaption, "mt-3")}>
+          <p className={classNames(styles.about__avatarCaption, "mt-3 italic")}>
             hover/tap for a surprise
           </p>
         )}
@@ -128,7 +119,7 @@ const About = ({ isItemOpened, setIsItemOpened }: Props) => {
         <div
           className={classNames(
             styles.about__textBlock,
-            "lg:w-8/12 md:w-6/12 w-12/12"
+            "md:overflow-y-auto overflow-y-scroll lg:w-8/12 md:w-6/12 w-12/12"
           )}
         >
           {aboutText}

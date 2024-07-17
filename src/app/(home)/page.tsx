@@ -5,12 +5,14 @@ import Loading from "../components/Loading/Loading";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import About from "../components/About/About";
+import Works from "../components/Works/Works";
 import styles from "./styles.module.scss";
 
 export default function Home() {
   const [isLoadingVisible, setIsLoadingVisible] = useState(true);
   const [isDoneLoading, setIsDoneLoading] = useState(false);
   const [isItemOpened, setIsItemOpened] = useState(false);
+  const [openedItem, setOpenedItem] = useState<string | null>(null);
 
   useEffect(() => {
     setTimeout(() => {
@@ -25,7 +27,7 @@ export default function Home() {
     <main className="relative">
       {isLoadingVisible && <Loading isDoneLoading={isDoneLoading} />}
       <section className={classNames(styles.homeContainer, "absolute overflow-hidden")}>
-        <Header isItemOpened={isItemOpened} setIsItemOpened={setIsItemOpened} />
+        <Header isItemOpened={isItemOpened} setIsItemOpened={setIsItemOpened} openedItem={openedItem} setOpenedItem={setOpenedItem} />
         <div className="w-10/12 m-auto">
           <div className={classNames(styles.homeContainer__titleWrapper)}>
             <h2 className={classNames(styles.homeContainer__title)}>
@@ -40,8 +42,11 @@ export default function Home() {
             <b>click on my headphones</b>
           </p>
         </div>
-        {isItemOpened && (
-          <About isItemOpened={isItemOpened} setIsItemOpened={setIsItemOpened} />
+        {openedItem === 'about' && (
+          <About isItemOpened={openedItem === "about"} setIsItemOpened={setIsItemOpened} setOpenedItem={setOpenedItem} />
+        )}
+        {openedItem === 'works' && (
+          <Works isItemOpened={openedItem === "works"} setIsItemOpened={setIsItemOpened} setOpenedItem={setOpenedItem} />
         )}
         <Footer />
       </section>

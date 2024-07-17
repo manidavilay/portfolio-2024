@@ -8,9 +8,10 @@ interface Props {
   isItemOpened: boolean;
   setIsItemOpened: (value: boolean) => void;
   children: React.ReactNode;
+  setOpenedItem: (item: string | null) => void;
 }
 
-const ItemsLayout = ({ isItemOpened, setIsItemOpened, children }: Props) => {
+const ItemsLayout = ({ isItemOpened, setIsItemOpened, children, setOpenedItem }: Props) => {
   const [hasTranslated, setHasTranslated] = useState(false);
 
   const closeItem = () => {
@@ -19,7 +20,7 @@ const ItemsLayout = ({ isItemOpened, setIsItemOpened, children }: Props) => {
 
   const handleTransitionEnd = () => {
     if (!hasTranslated) {
-      setIsItemOpened(false);
+      setOpenedItem(null);
     }
   };
 

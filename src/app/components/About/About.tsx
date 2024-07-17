@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classNames from "classnames";
 import useIsMobile from "@/app/hooks/useIsMobile";
 import Image from "next/image";
-import CloseButton from "../CloseButton/CloseButton";
 import ThisOrThat from "../ThisOrThat/ThisOrThat";
 import styles from "./styles.module.scss";
+import ItemsLayout from "@/app/layouts/Items/ItemsLayout";
 
 interface Props {
   isItemOpened: boolean;
@@ -14,7 +14,6 @@ interface Props {
 
 const About = ({ isItemOpened, setIsItemOpened }: Props) => {
   const [isAvatarVisible, setIsAvatarVisible] = useState(true);
-  const [hasTranslated, setHasTranslated] = useState(false);
   const isMobile = useIsMobile();
 
   const aboutText = (
@@ -47,16 +46,6 @@ const About = ({ isItemOpened, setIsItemOpened }: Props) => {
     </>
   );
 
-  const closeMenuItem = () => {
-    setHasTranslated(false);
-  };
-
-  const aboutTranslateEnd = () => {
-    if (!hasTranslated) {
-      setIsItemOpened(false);
-    }
-  };
-
   const mouseEnterAvatar = () => {
     if (!isMobile) {
       setIsAvatarVisible(false)
@@ -77,20 +66,8 @@ const About = ({ isItemOpened, setIsItemOpened }: Props) => {
     }
   }
 
-  useEffect(() => {
-    if (isItemOpened) {
-      setHasTranslated(true);
-    }
-  }, [isItemOpened]);
-
   return (
-    <section
-      className={classNames(styles.about, "absolute flex items-center", {
-        [styles.hasTranslated]: hasTranslated,
-      })}
-      onTransitionEnd={aboutTranslateEnd}
-    >
-      <CloseButton closeItem={closeMenuItem} />
+    <ItemsLayout isItemOpened={isItemOpened} setIsItemOpened={setIsItemOpened}>
       <div className="relative flex items-center md:flex-row flex-col w-10/12 mx-auto">
       <div className="flex flex-col items-center lg:w-4/12 md:w-6/12 w-12/12 md:mr-10 mr-0 md:mb-0 sm:mb-8 mb-8">
         <div className={classNames((styles.about__avatarBlock), "relative")} onClick={touchAvatar} onMouseEnter={mouseEnterAvatar} onMouseLeave={mouseLeaveAvatar}>
@@ -125,7 +102,7 @@ const About = ({ isItemOpened, setIsItemOpened }: Props) => {
           {aboutText}
         </div>
       </div>
-    </section>
+    </ItemsLayout>
   );
 };
 

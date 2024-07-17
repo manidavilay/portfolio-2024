@@ -1,0 +1,20 @@
+@import "../../utils/variables.scss";
+
+.itemsLayout {
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    height: 88vh;
+    background-color: $dark-blue;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transform: translateY(100%);
+    transition: all 1s ease-in-out;
+    opacity: 0;
+
+    &.hasTranslated {
+        transform: translateY(0%);
+        transition: all 1s ease-in-out;
+        opacity: 1;
+    }
+}

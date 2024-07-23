@@ -17,4 +17,13 @@
         transition: all 1s ease-in-out;
         opacity: 1;
     }
+
+    &.isScrollable {
+        overflow-y: scroll;
+        scrollbar-width: none;
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
 }

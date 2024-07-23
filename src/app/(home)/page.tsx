@@ -43,10 +43,10 @@ export default function Home() {
           </p>
         </div>
         {openedItem === 'about' && (
-          <About isItemOpened={openedItem === "about"} setIsItemOpened={setIsItemOpened} setOpenedItem={setOpenedItem} />
+          <About isItemOpened={openedItem === "about"} setOpenedItem={setOpenedItem} />
         )}
         {openedItem === 'works' && (
-          <Works isItemOpened={openedItem === "works"} setIsItemOpened={setIsItemOpened} setOpenedItem={setOpenedItem} />
+          <Works isItemOpened={openedItem === "works"} setOpenedItem={setOpenedItem} />
         )}
         <Footer />
       </section>

@@ -6,12 +6,12 @@ import styles from "./styles.module.scss";
 
 interface Props {
   isItemOpened: boolean;
-  setIsItemOpened: (value: boolean) => void;
   children: React.ReactNode;
   setOpenedItem: (item: string | null) => void;
+  isScrollable?: boolean;
 }
 
-const ItemsLayout = ({ isItemOpened, setIsItemOpened, children, setOpenedItem }: Props) => {
+const ItemsLayout = ({ isItemOpened, children, setOpenedItem, isScrollable }: Props) => {
   const [hasTranslated, setHasTranslated] = useState(false);
 
   const closeItem = () => {
@@ -32,8 +32,9 @@ const ItemsLayout = ({ isItemOpened, setIsItemOpened, children, setOpenedItem }:
 
   return (
     <section
-      className={classNames(styles.itemsLayout, "absolute flex items-center", {
+      className={classNames(styles.itemsLayout, "absolute", {
         [styles.hasTranslated]: hasTranslated,
+        [styles.isScrollable]: isScrollable
       })}
       onTransitionEnd={handleTransitionEnd}
     >

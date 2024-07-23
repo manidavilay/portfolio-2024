@@ -9,11 +9,10 @@ import ItemsLayout from "@/app/layouts/Items/ItemsLayout";
 
 interface Props {
   isItemOpened: boolean;
-  setIsItemOpened: (value: boolean) => void;
   setOpenedItem: (item: string | null) => void;
 }
 
-const About = ({ isItemOpened, setIsItemOpened, setOpenedItem }: Props) => {
+const About = ({ isItemOpened, setOpenedItem }: Props) => {
   const [isAvatarVisible, setIsAvatarVisible] = useState(true);
   const isMobile = useIsMobile();
 
@@ -68,39 +67,41 @@ const About = ({ isItemOpened, setIsItemOpened, setOpenedItem }: Props) => {
   }
 
   return (
-    <ItemsLayout isItemOpened={isItemOpened} setIsItemOpened={setIsItemOpened} setOpenedItem={setOpenedItem}>
-      <div className="relative flex items-center md:flex-row flex-col w-10/12 mx-auto">
-      <div className="flex flex-col items-center lg:w-4/12 md:w-6/12 w-12/12 md:mr-10 mr-0 md:mb-0 sm:mb-8 mb-8">
-        <div className={classNames((styles.about__avatarBlock), "relative")} onClick={touchAvatar} onMouseEnter={mouseEnterAvatar} onMouseLeave={mouseLeaveAvatar}>
-          <Image
-            src={
-              !isMobile
-                ? "/assets/images/avatar.svg"
-                : "/assets/images/mobile-avatar.svg"
-            }
-            layout="fill"
-            alt="Manida Vilay's avatar"
-            className={classNames(styles.about__avatar, "absolute", {
-              [styles.isFading]: !isAvatarVisible
-            })}
-          />
+    <ItemsLayout isItemOpened={isItemOpened} setOpenedItem={setOpenedItem}>
+      <div className="flex items-center w-full h-full">
+        <div className="relative flex items-center md:flex-row flex-col w-10/12 mx-auto">
+        <div className="flex flex-col items-center lg:w-4/12 md:w-6/12 w-12/12 md:mr-10 mr-0 md:mb-0 sm:mb-8 mb-8">
+          <div className={classNames((styles.about__avatarBlock), "relative")} onClick={touchAvatar} onMouseEnter={mouseEnterAvatar} onMouseLeave={mouseLeaveAvatar}>
+            <Image
+              src={
+                !isMobile
+                  ? "/assets/images/avatar.svg"
+                  : "/assets/images/mobile-avatar.svg"
+              }
+              layout="fill"
+              alt="Manida Vilay's avatar"
+              className={classNames(styles.about__avatar, "absolute", {
+                [styles.isFading]: !isAvatarVisible
+              })}
+            />
+            {!isMobile && (
+              <ThisOrThat />
+            )}
+          </div>
           {!isMobile && (
-            <ThisOrThat />
+            <p className={classNames(styles.about__avatarCaption, "mt-3 italic")}>
+              hover/tap for a surprise
+            </p>
           )}
         </div>
-        {!isMobile && (
-          <p className={classNames(styles.about__avatarCaption, "mt-3 italic")}>
-            hover/tap for a surprise
-          </p>
-        )}
-      </div>
-        <div
-          className={classNames(
-            styles.about__textBlock,
-            "md:overflow-y-auto overflow-y-scroll lg:w-8/12 md:w-6/12 w-12/12"
-          )}
-        >
-          {aboutText}
+          <div
+            className={classNames(
+              styles.about__textBlock,
+              "md:overflow-y-auto overflow-y-scroll lg:w-8/12 md:w-6/12 w-12/12"
+            )}
+          >
+            {aboutText}
+          </div>
         </div>
       </div>
     </ItemsLayout>

@@ -1,0 +1,77 @@
+@import '../../utils/variables.scss';
+@import '../../utils/mixins.scss';
+
+.works {
+    margin: 10vh 0;
+
+    @include mobile-l {
+        margin: 5vh 0;
+    }
+
+    &__container {
+        width: 400px;
+        height: 400px;
+        padding: 30px;
+        background-color: $purple3;
+        border-radius: 30px;
+        font-size: 14px;
+
+        @include tablet {
+            height: 450px;
+        }
+
+        @include mobile-l {
+            height: 470px;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        @include mobile-m {
+            height: 500px;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        width: 60px;
+        height: 60px;
+
+        @include mobile-l {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    &__tech {
+        border: 1px solid $white;
+        border-radius: 20px;
+        font-size: 12px;
+
+        @include mobile-l {
+            font-size: 10px;
+        }
+    }
+
+    &__link {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -5px;
+            width: 30%;
+            height: 2px;
+            background-color: $white;
+            transition: all 0.5s ease-in-out;
+        }
+
+        &:hover {
+            &::after {
+                width: 70%;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+}

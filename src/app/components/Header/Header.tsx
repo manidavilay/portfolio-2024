@@ -1,38 +1,54 @@
 "use client";
-import classNames from 'classnames';
-import useIsMobile from '@/app/hooks/useIsMobile';
-import Image from 'next/image'
-import styles from './styles.module.scss'
+import classNames from "classnames";
+import useIsMobile from "@/app/hooks/useIsMobile";
+import Image from "next/image";
+import styles from "./styles.module.scss";
 
 interface Props {
-    isItemOpened: boolean
-    setIsItemOpened: (value: boolean) => void
-    openedItem: string | null
-    setOpenedItem: (item: string | null) => void
+  isItemOpened: boolean;
+  openedItem: string | null;
+  setOpenedItem: (item: string | null) => void;
 }
 
-const Header = ({isItemOpened, setIsItemOpened, openedItem, setOpenedItem}: Props) => {
-    const isMobile = useIsMobile();
+const Header = ({ isItemOpened, setOpenedItem, openedItem }: Props) => {
+  const isMobile = useIsMobile();
 
-    const openMenuItem = (item: string) => {
-        if (!isItemOpened) {
-            setOpenedItem(item)
-        }
+  const menuItems = [
+    { name: "about", label: "about" },
+    { name: "works", label: "works" },
+  ];
+
+  const openMenuItem = (item: string) => {
+    if (!isItemOpened) {
+      setOpenedItem(item);
     }
+  };
 
-    return (
-       <header className="relative flex items-center md:justify-center justify-end w-11/12 md:mt-10 mt-6 mx-auto">
-        <Image src="/assets/logos/mv-logo.svg" width={!isMobile ? 130 : 100} height={!isMobile ? 45 : 35} alt="Manida VILAY's logo" className={classNames(styles.logo, 'absolute')} />
-        <ul className={classNames(styles.menu, "flex")}>
-            <li>
-                <button className={styles.menu__button} onClick={() => openMenuItem('about')}>about</button>
-            </li>
-            <li>
-                <button className={styles.menu__button} onClick={() => openMenuItem('works')}>works</button>
-            </li>
-        </ul>
-       </header>
-    )
-}
+  return (
+    <header className="relative flex items-center md:justify-center justify-end w-11/12 md:mt-10 mt-6 mx-auto">
+      <Image
+        src="/assets/logos/mv-logo.svg"
+        width={!isMobile ? 130 : 100}
+        height={!isMobile ? 45 : 35}
+        alt="Manida VILAY's logo"
+        className={classNames(styles.logo, "absolute")}
+      />
+      <ul className={classNames(styles.menu, "flex")}>
+        {menuItems.map((item) => (
+          <li
+            key={item.name}
+            className={classNames(styles.menu__button, {
+              [styles.isActive]: openedItem === item.name,
+            })}
+          >
+            <button onClick={() => openMenuItem(item.name)}>
+              {item.label}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </header>
+  );
+};
 
-export default Header
+export default Header;

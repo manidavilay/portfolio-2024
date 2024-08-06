@@ -5,15 +5,24 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 interface Props {
-  menuItems: { name: string; label: string; }[];
-  openMenuItem: (item: string) => void;
   isItemOpened: boolean;
   openedItem: string | null;
   setOpenedItem: (item: string | null) => void;
 }
 
-const Header = ({ menuItems, openMenuItem, isItemOpened, setOpenedItem, openedItem }: Props) => {
+const Header = ({ isItemOpened, setOpenedItem, openedItem }: Props) => {
   const isMobile = useIsMobile();
+
+  const menuItems = [
+    { name: "about", label: "about" },
+    { name: "works", label: "works" },
+  ];
+
+  const openMenuItem = (item: string) => {
+    if (!isItemOpened) {
+      setOpenedItem(item);
+    }
+  };
 
   return (
     <header className="relative flex items-center md:justify-center justify-end w-11/12 md:mt-10 mt-6 mx-auto">

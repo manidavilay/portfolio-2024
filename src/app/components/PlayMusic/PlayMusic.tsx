@@ -8,8 +8,8 @@ interface Props {
 }
 
 const PlayMusic = ({ isPlaying, setIsPlaying }: Props) => {
-  // const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const audioRefs = useRef<HTMLAudioElement[]>([]);
+  const [volume, setVolume] = useState<number>(0.2);
   
   const audioSources = [
     "/assets/sounds/lesfm-lost-ambient-lofi-60s.mp3",
@@ -31,6 +31,7 @@ const PlayMusic = ({ isPlaying, setIsPlaying }: Props) => {
     } else {
       audioRefs.current.forEach((audio, index) => {
         audio.addEventListener("ended", () => onAudioEnded(index));
+        audio.volume = volume;
         if (index === 0) {
           audio.play();
         }

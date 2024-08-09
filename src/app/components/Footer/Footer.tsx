@@ -47,7 +47,7 @@ const Footer = () => {
           <Link
             href="/resume.pdf"
             target="_blank"
-            className={classNames(styles.footer__logoWrapper, "inline-flex items-center md:justify-start justify-center md:mt-2 mt-1")}
+            className={classNames(styles.footer__logoWrapper, "inline-flex items-center md:justify-start justify-center mt-1")}
           >
             <Image
               src="/assets/logos/mv-squared-logo.svg"

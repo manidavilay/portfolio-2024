@@ -1,6 +1,7 @@
 "use client";
 import classNames from "classnames";
 import Drawing from "../Drawing/Drawing";
+import TypingAnimationLayout from "@/app/layouts/TypingAnimation/TypingAnimationLayout";
 import styles from "./styles.module.scss";
 
 interface Props {
@@ -30,9 +31,11 @@ const Loading = ({ isDoneLoading }: Props) => {
                 "mt-4 mb-7 sm:mt-5 sm:mb-8"
               )}
             />
-            <h2 className={classNames(styles.textWrapper__subtitle)}>
-              front-end web developer
-            </h2>
+            <TypingAnimationLayout type="loadingText">
+              <h2 className={classNames(styles.textWrapper__subtitle)}>
+                front-end web developer
+              </h2>
+            </TypingAnimationLayout>
           </div>
         </div>
       </div>

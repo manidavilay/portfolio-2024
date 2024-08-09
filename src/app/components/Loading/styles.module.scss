@@ -52,35 +52,12 @@
 
   &__subtitle {
     font-family: "Menlo";
-    border-right: 10px solid $white;
     font-size: 25px;
     line-height: 28px;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 3.75s steps(40, end) forwards, blink 1s infinite;
   
     @include mobile-l {
-      border-right-width: 5px;
       font-size: 15px;
       line-height: 20px;
     }
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  from {
-    border-color: transparent;
-  }
-  to {
-    border-color: $white;
   }
 }

@@ -1,41 +1,103 @@
+// Screens
 @mixin desktop-l {
-    @media (max-width: #{$large-desktop-width}) {
-      @content;
-    }
+  @media (max-width: #{$large-desktop-width}) {
+    @content;
   }
-  
-  @mixin desktop-m {
-    @media (max-width: #{$medium-desktop-width}) {
-      @content;
-    }
+}
+
+@mixin desktop-m {
+  @media (max-width: #{$medium-desktop-width}) {
+    @content;
   }
-  
-  @mixin desktop-s {
-    @media (max-width: #{$small-desktop-width}) {
-      @content;
-    }
+}
+
+@mixin desktop-s {
+  @media (max-width: #{$small-desktop-width}) {
+    @content;
   }
-  
-  @mixin tablet {
-    @media (max-width: #{$tablet-width}) {
-      @content;
-    }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
   }
-  
-  @mixin mobile-l {
-    @media (max-width: #{$mobile-width}) {
-      @content;
-    }
+}
+
+@mixin mobile-l {
+  @media (max-width: #{$mobile-width}) {
+    @content;
   }
-  
-  @mixin mobile-m {
-    @media (max-width: #{$medium-mobile-width}) {
-      @content;
-    }
+}
+
+@mixin mobile-m {
+  @media (max-width: #{$medium-mobile-width}) {
+    @content;
   }
-  
-  @mixin mobile-s {
-    @media (max-width: #{$small-mobile-width}) {
-      @content;
-    }
+}
+
+@mixin mobile-s {
+  @media (max-width: #{$small-mobile-width}) {
+    @content;
   }
+}
+
+// Animations
+@mixin typingAnimation(
+  $typing-duration,
+  $typing-steps,
+  $blinking-delay,
+  $blinking-cursor-repetition,
+  $hiding-cursor-duration,
+  $hiding-cursor-delay,
+  $global-animation-delay
+) {
+  animation: typing $typing-duration steps($typing-steps, end) 1s 1 normal both,
+    blinking-cursor 0.9s steps(35, end) $blinking-delay
+      $blinking-cursor-repetition;
+
+  @if $hiding-cursor-duration != null and $hiding-cursor-delay != null {
+    animation: typing
+        $typing-duration
+        steps($typing-steps, end)
+        1s
+        1
+        normal
+        both,
+      blinking-cursor
+        0.9s
+        steps(35, end)
+        $blinking-delay
+        $blinking-cursor-repetition,
+      hiding-cursor
+        $hiding-cursor-duration
+        step-end
+        $hiding-cursor-delay
+        forwards;
+  }
+
+  animation-delay: $global-animation-delay;
+}
+
+@keyframes blinking-cursor {
+  from {
+    border-right-color: transparent;
+  }
+  to {
+    border-right-color: $white;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width);
+  }
+}
+
+@keyframes hiding-cursor {
+  to {
+    border-right-color: transparent;
+  }
+}

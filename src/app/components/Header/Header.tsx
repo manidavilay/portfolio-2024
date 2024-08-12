@@ -1,7 +1,6 @@
 "use client";
 import classNames from "classnames";
-import useIsMobile from "@/app/hooks/useIsMobile";
-import Image from "next/image";
+import Logo from "../Logo/Logo";
 import styles from "./styles.module.scss";
 
 interface Props {
@@ -11,8 +10,6 @@ interface Props {
 }
 
 const Header = ({ isItemOpened, setOpenedItem, openedItem }: Props) => {
-  const isMobile = useIsMobile();
-
   const menuItems = [
     { name: "about", label: "about" },
     { name: "works", label: "works" },
@@ -26,13 +23,7 @@ const Header = ({ isItemOpened, setOpenedItem, openedItem }: Props) => {
 
   return (
     <header className="relative flex items-center md:justify-center justify-end w-11/12 md:mt-10 mt-6 mx-auto">
-      <Image
-        src="/assets/logos/mv-logo.svg"
-        width={!isMobile ? 130 : 100}
-        height={!isMobile ? 45 : 35}
-        alt="Manida VILAY's logo"
-        className={classNames(styles.logo, "absolute")}
-      />
+      <Logo />
       <ul className={classNames(styles.menu, "flex")}>
         {menuItems.map((item) => (
           <li

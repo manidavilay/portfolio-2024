@@ -1,0 +1,104 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.logo {
+    left: 0;
+    overflow: hidden;
+  
+    &__svg {
+      width: 130px;
+      height: 45px;
+  
+      &:hover {
+        .line {
+          animation-fill-mode: forwards;
+          animation-direction: reverse;
+          animation-timing-function: linear;
+          animation-duration: 0.4s;
+  
+          &--1,
+          &--7 {
+              animation-name: long-line;
+              stroke-dasharray: 203;
+              stroke-dashoffset: 203;  
+          }
+  
+          &--2,
+          &--4,
+          &--6 {
+            animation-name: straight-line;
+            stroke-dasharray: 83;
+            stroke-dashoffset: 83;
+          }
+  
+          &--3,
+          &--5 {
+            animation-name: diagonal-line;
+            stroke-dasharray: 108;
+            stroke-dashoffset: 108;
+          }
+    
+          &--1 {
+            animation-delay: 0s;
+          }
+    
+          &--2 {
+            animation-delay: 0.4s;
+          }
+    
+          &--3 {
+            animation-delay: 0.8s;
+          }
+    
+          &--4 {
+            animation-delay: 1.2s;
+          }
+    
+          &--5 {
+            animation-delay: 1.6s;
+          }
+    
+          &--6 {
+            animation-delay: 2s;
+          }
+    
+          &--7 {
+            animation-delay: 2.4s;
+          }
+        }
+      }
+  
+      @include mobile-l {
+        width: 100px;
+        height: 35px;
+      }
+    }
+  }
+
+  @keyframes long-line {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 203;
+    }
+  }
+  
+  @keyframes straight-line {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 83;
+    }
+  }
+  
+  @keyframes diagonal-line {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: 108;
+    }
+  }
+  

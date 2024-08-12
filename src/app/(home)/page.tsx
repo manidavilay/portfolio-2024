@@ -25,6 +25,10 @@ const Home = () => {
     setIsLoadingVisible(false);
   }, 7800);
 
+  const skipLoadingPage = () => {
+    setIsLoadingVisible(false);
+  }
+
   useEffect(() => {
     return () => {
       clearTimeout(loadingTimeout);
@@ -34,7 +38,7 @@ const Home = () => {
 
   return (
     <main className="relative">
-      {isLoadingVisible && <Loading isDoneLoading={isDoneLoading} />}
+      {isLoadingVisible && <Loading isDoneLoading={isDoneLoading} skipLoadingPage={skipLoadingPage} />}
       <section
         className={classNames(styles.homeContainer, "absolute overflow-hidden")}
       >
@@ -45,16 +49,20 @@ const Home = () => {
         />
         <div className="relative flex flex-col justify-between w-10/12 m-auto">
           <div className={classNames(styles.homeContainer__titleWrapper)}>
-            <TypingAnimationLayout type="titleText">
-              <h2 className={classNames(styles.homeContainer__title)}>
-                manida vilay
-              </h2>
-            </TypingAnimationLayout>
-            <TypingAnimationLayout type="subtitleText">
-              <h3 className={classNames(styles.homeContainer__subtitle, "mt-1")}>
-                front-end web developer
-              </h3>
-            </TypingAnimationLayout>
+            {!isLoadingVisible && (
+              <>
+                <TypingAnimationLayout type="titleText">
+                  <h2 className={classNames(styles.homeContainer__title)}>
+                    manida vilay
+                  </h2>
+                </TypingAnimationLayout>
+                <TypingAnimationLayout type="subtitleText">
+                  <h3 className={classNames(styles.homeContainer__subtitle, "mt-1")}>
+                    front-end web developer
+                  </h3>
+                </TypingAnimationLayout>
+              </>
+            )}
           </div>
           <div
             className={classNames(
@@ -62,16 +70,20 @@ const Home = () => {
               "flex flex-col items-end"
             )}
           >
-            <TypingAnimationLayout type="listeningText">
-              <p>
-                want to know what i am listening to ?
-              </p>
-            </TypingAnimationLayout>
-            <TypingAnimationLayout type="headphonesText">
-              <p>
-                click on my headphones to <i>{!isPlaying ? "play" : "stop"}</i>
-              </p>
-            </TypingAnimationLayout>
+            {!isLoadingVisible && (
+              <>
+              <TypingAnimationLayout type="listeningText">
+                <p>
+                  want to know what i am listening to ?
+                </p>
+              </TypingAnimationLayout>
+              <TypingAnimationLayout type="headphonesText">
+                <p>
+                  click on my headphones to <i>{!isPlaying ? "play" : "stop"}</i>
+                </p>
+              </TypingAnimationLayout>
+              </>
+            )}
           </div>
         </div>
         <PlayMusic isPlaying={isPlaying} setIsPlaying={setIsPlaying} />

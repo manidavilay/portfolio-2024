@@ -50,14 +50,26 @@
     }
   }
 
-  &__subtitle {
+  &__subtitle,
+  &__skip {
     font-family: "Menlo";
+  }
+
+  &__subtitle {
     font-size: 25px;
     line-height: 28px;
   
     @include mobile-l {
       font-size: 15px;
       line-height: 20px;
+    }
+  }
+
+  &__skip {
+    font-size: 14px;
+
+    @include mobile-l {
+      font-size: 12px;
     }
   }
 }

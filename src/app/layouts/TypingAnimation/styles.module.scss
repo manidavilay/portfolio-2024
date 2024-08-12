@@ -13,22 +13,22 @@
     }
 
     &.titleText {
-      @include typingAnimation(2.5s, 35, 1s, 6, 2.5s, 2.5s, 7s);
+      @include typingAnimation(2.5s, 35, 1s, 6, 2.5s, 2.5s, 0s);
       --target-width: 135px;
     }
 
     &.subtitleText {
-      @include typingAnimation(2.5s, 35, 1s, 6, 2.5s, 2.5s, 9.5s);
+      @include typingAnimation(2.5s, 35, 1s, 6, 2.5s, 2.5s, 2.5s);
       --target-width: 200px;
     }
 
     &.listeningText {
-      @include typingAnimation(2.5s, 35, 1s, 6, 2.75s, 1.45s, 12s);
+      @include typingAnimation(2.5s, 35, 1s, 6, 2.75s, 1.45s, 5s);
       --target-width: 315px;
     }
 
     &.headphonesText {
-      @include typingAnimation(2.5s, 35, 1s, infinite, null, null, 14.5s);
+      @include typingAnimation(2.5s, 35, 1s, infinite, null, null, 7.5s);
       --target-width: 257px;
     }
   }

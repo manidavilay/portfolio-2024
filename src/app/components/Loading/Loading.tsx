@@ -6,9 +6,10 @@ import styles from "./styles.module.scss";
 
 interface Props {
   isDoneLoading: boolean;
+  skipLoadingPage: () => void;
 }
 
-const Loading = ({ isDoneLoading }: Props) => {
+const Loading = ({ isDoneLoading, skipLoadingPage }: Props) => {
   return (
     <section
       className={classNames(styles.main, "absolute w-full h-screen", {
@@ -24,7 +25,7 @@ const Loading = ({ isDoneLoading }: Props) => {
           )}
         >
           <h1 className={styles.textWrapper__title}>Manida Vilay</h1>
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center mb-16">
             <div
               className={classNames(
                 styles.textWrapper__separator,
@@ -37,6 +38,7 @@ const Loading = ({ isDoneLoading }: Props) => {
               </h2>
             </TypingAnimationLayout>
           </div>
+          <button className={classNames(styles.textWrapper__skip)} onClick={skipLoadingPage}>skip</button>
         </div>
       </div>
     </section>

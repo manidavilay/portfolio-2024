@@ -90,7 +90,7 @@ const About = ({ isItemOpened, setOpenedItem }: Props) => {
           </div>
           {!isMobile && (
             <p className={classNames(styles.about__avatarCaption, "mt-3 italic")}>
-              hover/tap for a surprise
+              hover/tap for more
             </p>
           )}
         </div>

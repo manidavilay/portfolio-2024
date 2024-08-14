@@ -12,9 +12,15 @@
         width: 400px;
         height: 400px;
         padding: 30px;
-        background-color: $purple3;
+        background-color: $purple2;
         border-radius: 30px;
         font-size: 14px;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            background-color: $purple;
+            transition: all 0.5s ease-in-out;
+        }
 
         @include tablet {
             height: 450px;

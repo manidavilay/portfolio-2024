@@ -42,6 +42,7 @@ const Footer = () => {
             <Link
               key={index}
               href={href}
+              target="_blank"
               className="inline-flex items-center md:justify-start justify-center mt-1"
             >
               <Image

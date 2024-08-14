@@ -27,7 +27,7 @@ const Home = () => {
 
   const skipLoadingPage = () => {
     setIsLoadingVisible(false);
-  }
+  };
 
   useEffect(() => {
     return () => {
@@ -38,68 +38,75 @@ const Home = () => {
 
   return (
     <main className="relative">
-      {isLoadingVisible && <Loading isDoneLoading={isDoneLoading} skipLoadingPage={skipLoadingPage} />}
-      <section
-        className={classNames(styles.homeContainer, "absolute overflow-hidden")}
-      >
-        <Header
-          isItemOpened={isItemOpened}
-          openedItem={openedItem}
-          setOpenedItem={setOpenedItem}
+      {isLoadingVisible && (
+        <Loading
+          isDoneLoading={isDoneLoading}
+          skipLoadingPage={skipLoadingPage}
         />
-        <div className="relative flex flex-col justify-between w-10/12 m-auto">
-          <div className={classNames(styles.homeContainer__titleWrapper)}>
-            {!isLoadingVisible && (
-              <>
-                <TypingAnimationLayout type="titleText">
-                  <h2 className={classNames(styles.homeContainer__title)}>
-                    manida vilay
-                  </h2>
-                </TypingAnimationLayout>
-                <TypingAnimationLayout type="subtitleText">
-                  <h3 className={classNames(styles.homeContainer__subtitle, "mt-1")}>
-                    front-end web developer
-                  </h3>
-                </TypingAnimationLayout>
-              </>
-            )}
+      )}
+      <section className={classNames(styles.home, "absolute overflow-hidden")}>
+        <video autoPlay muted loop className={styles.home__video} >
+          <source src="/assets/images/background.mp4" type="video/mp4" />
+        </video>
+        <div className={styles.home__container}>
+          <Header
+            isItemOpened={isItemOpened}
+            openedItem={openedItem}
+            setOpenedItem={setOpenedItem}
+          />
+          <div className="relative flex flex-col justify-between w-10/12 m-auto">
+            <div className={classNames(styles.home__titleWrapper)}>
+              {!isLoadingVisible && (
+                <>
+                  <TypingAnimationLayout type="titleText">
+                    <h1 className={classNames(styles.home__title)}>
+                      manida vilay
+                    </h1>
+                  </TypingAnimationLayout>
+                  <TypingAnimationLayout type="subtitleText">
+                    <h2 className={classNames(styles.home__subtitle, "mt-1")}>
+                      front-end web developer
+                    </h2>
+                  </TypingAnimationLayout>
+                </>
+              )}
+            </div>
+            <div
+              className={classNames(
+                styles.home__textWrapper,
+                "flex flex-col items-end"
+              )}
+            >
+              {!isLoadingVisible && (
+                <>
+                  <TypingAnimationLayout type="listeningText">
+                    <p>want to know what i am listening to ?</p>
+                  </TypingAnimationLayout>
+                  <TypingAnimationLayout type="headphonesText">
+                    <p>
+                      click on my headphones to{" "}
+                      <i>{!isPlaying ? "play" : "stop"}</i>
+                    </p>
+                  </TypingAnimationLayout>
+                </>
+              )}
+            </div>
           </div>
-          <div
-            className={classNames(
-              styles.homeContainer__textWrapper,
-              "flex flex-col items-end"
-            )}
-          >
-            {!isLoadingVisible && (
-              <>
-              <TypingAnimationLayout type="listeningText">
-                <p>
-                  want to know what i am listening to ?
-                </p>
-              </TypingAnimationLayout>
-              <TypingAnimationLayout type="headphonesText">
-                <p>
-                  click on my headphones to <i>{!isPlaying ? "play" : "stop"}</i>
-                </p>
-              </TypingAnimationLayout>
-              </>
-            )}
-          </div>
+          <PlayMusic isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+          {openedItem === "about" && (
+            <About
+              isItemOpened={openedItem === "about"}
+              setOpenedItem={setOpenedItem}
+            />
+          )}
+          {openedItem === "works" && (
+            <Works
+              isItemOpened={openedItem === "works"}
+              setOpenedItem={setOpenedItem}
+            />
+          )}
+          <Footer />
         </div>
-        <PlayMusic isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
-        {openedItem === "about" && (
-          <About
-            isItemOpened={openedItem === "about"}
-            setOpenedItem={setOpenedItem}
-          />
-        )}
-        {openedItem === "works" && (
-          <Works
-            isItemOpened={openedItem === "works"}
-            setOpenedItem={setOpenedItem}
-          />
-        )}
-        <Footer />
       </section>
     </main>
   );

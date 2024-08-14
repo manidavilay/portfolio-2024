@@ -1,23 +1,34 @@
 @import "../utils/variables.scss";
 @import "../utils/mixins.scss";
 
-.homeContainer {
-  z-index: 1;
-  background-image: url(/assets/images/background.gif);
-  background-size: cover;
-  background-position: center;
+.home {
   width: 100%;
   height: 100vh;
   font-family: "Menlo";
   color: $white;
 
-  @media (min-width: 820px) and (min-height: 1180px) {
-    // specific for ipad air
-    background-position: 70%;
+  &__video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+  
+    @media (min-width: 820px) and (min-height: 1180px) {
+      // specific for ipad air
+      object-position: 70%;
+    }
+  
+    @include tablet {
+      object-position: 70%;
+    }
   }
 
-  @include tablet {
-    background-position: 70%;
+  &__container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
   }
 
   &__titleWrapper {

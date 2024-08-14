@@ -8,6 +8,27 @@ import styles from "./styles.module.scss";
 const Footer = () => {
   const isMobile = useIsMobile();
 
+  const footerLinks = [
+    {
+      href: "mailto:vilaymanida@gmail.com",
+      src: "mail.svg",
+      alt: "Logo mail",
+      text: "vilaymanida@gmail.com",
+    },
+    {
+      href: "https://www.linkedin.com/in/manida-vilay/",
+      src: "linkedin.svg",
+      alt: "Linkedin logo",
+      text: "linkedin",
+    },
+    {
+      href: "/resume.pdf",
+      src: "mv.svg",
+      alt: "Manida Vilay's squared logo",
+      text: "download resume here",
+    },
+  ];
+
   return (
     <footer className={classNames(styles.footer, "absolute")}>
       <div className="flex justify-between md:flex-row flex-col md:items-end items-center w-11/12 h-full mx-auto md:pb-8 sm:pb-6 pb-4">
@@ -17,47 +38,22 @@ const Footer = () => {
             "flex flex-col justify-end md:mb-0 mb-4"
           )}
         >
-          <Link
-            href="mailto:vilaymanida@gmail.com"
-            className="inline-flex items-center md:justify-start justify-center"
-          >
-            <Image
-              src="/assets/icons/mail.svg"
-              width={!isMobile ? "25" : "20"}
-              height={!isMobile ? "25" : "20"}
-              alt="Logo mail"
-              className="mr-1"
-            />
-            vilaymanida@gmail.com
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/manida-vilay/"
-            className="inline-flex items-center md:justify-start justify-center mt-1"
-            target="_blank"
-          >
-            <Image
-              src="/assets/icons/linkedin.svg"
-              width={!isMobile ? "25" : "20"}
-              height={!isMobile ? "25" : "20"}
-              alt="Linkedin logo"
-              className="mr-1"
-            />
-            linkedin
-          </Link>
-          <Link
-            href="/resume.pdf"
-            target="_blank"
-            className={classNames(styles.footer__logoWrapper, "inline-flex items-center md:justify-start justify-center mt-1")}
-          >
-            <Image
-              src="/assets/logos/mv-squared-logo.svg"
-              width="20"
-              height="20"
-              alt="Manida Vilay's squared logo"
-              className={classNames(styles.footer__logo, "mr-2")}
-            />
-            download resume here
-          </Link>
+          {footerLinks.map(({ href, src, alt, text }, index) => (
+            <Link
+              key={index}
+              href={href}
+              className="inline-flex items-center md:justify-start justify-center mt-1"
+            >
+              <Image
+                src={`/assets/icons/${src}`}
+                width={!isMobile ? "22" : "18"}
+                height={!isMobile ? "22" : "18"}
+                alt={alt}
+                className="md:mr-2 mr-1"
+              />
+              {text}
+            </Link>
+          ))}
         </div>
         <p className={classNames(styles.footer__copyright, "flex items-end")}>
           © designed, animated and coded by manida vilay - 2024

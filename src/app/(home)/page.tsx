@@ -34,7 +34,7 @@ const Home = () => {
       clearTimeout(loadingTimeout);
       clearTimeout(loadingVisibleTimeout);
     };
-  }, [loadingTimeout, loadingVisibleTimeout]);
+  }, []);
 
   return (
     <main className="relative">

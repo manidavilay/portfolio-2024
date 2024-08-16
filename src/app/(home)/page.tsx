@@ -45,7 +45,7 @@ const Home = () => {
         />
       )}
       <section className={classNames(styles.home, "absolute overflow-hidden")}>
-        <video autoPlay muted loop className={styles.home__video} >
+        <video autoPlay muted loop playsInline className={styles.home__video} >
           <source src="/assets/images/background.mp4" type="video/mp4" />
         </video>
         <div className={styles.home__container}>

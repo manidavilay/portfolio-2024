@@ -19,29 +19,25 @@ const About = ({ isItemOpened, setOpenedItem }: Props) => {
   const aboutText = (
     <>
       <p>
-        My name is <b>Manida</b>, and i am a <b>front-end web developer</b> from
+        My name is <b>Manida</b>, and I am a <b>front-end web developer</b> from
         France.
       </p>
       <p>
-        Since childhood, i’ve aspired to become a <b>doctor</b>, leading me to
-        attend medical school at UPEC (Université Paris-Est-Créteil) after high
-        school. However, after five years of rigorous study, i chose to pursue a
-        different career path.
+        From a young age, I dreamed of becoming a <b>doctor</b>, which led me to  pursue medical studies at UPEC (Université Paris-Est-Créteil) right after high
+        school. However, after five intense years of study, <b>I made the difficult decision to follow a different path</b>.
       </p>
       <p>
-        The transition brought a mix of <b>fear</b>, <b>excitement</b>,{" "}
-        <b>doubt</b>, <b>joy</b>, and <b>relief</b>.
+        The transition was a whirlwind of <b>fear</b>, <b>excitement</b>,{" "}
+        <b>doubt</b>, and ultimately, <b>relief</b>.
       </p>
       <p>
-        Seeking a profession that continuously challenges me and fosters
-        learning, i switched to web development. It&lsquo;s been five years now,
-        and despite the challenges, i remained dedicated, curious, and eager to
-        learn.
+        Driven by a desire for continuous challenge and growth, I turned to web development. It&lsquo;s now been five years,
+        and despite the difficulties, my passion, curiosity, and commitment to learning have only deepened.
       </p>
       <p>
-        I love <b>traveling</b> but as i can’t do it all year long (sadly), i
-        enjoy spending my free time <b>watching anime</b>, experimenting with{" "}
-        <b>cooking</b>, <b>DIY stuff</b> and <b>playing music</b>.
+        I love <b>traveling</b> but since I can&lsquo;t do it year-round (sadly), I
+       spend my free time exploring other passions like <b>watching anime</b>, experimenting with{" "}
+        <b>cooking</b>, tackling <b>DIY projects</b> and <b>playing music</b>.
       </p>
     </>
   );

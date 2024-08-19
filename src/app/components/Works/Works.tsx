@@ -40,7 +40,7 @@ const Works = ({ isItemOpened, setOpenedItem }: Props) => {
         { type: "typescript" },
         { type: "node" },
         { type: "express" },
-        { type: "mangoDB" },
+        { type: "mongoDB" },
         { type: "prismic" },
       ],
       website: "https://www.govirtuo.com/fr",

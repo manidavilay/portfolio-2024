@@ -151,8 +151,8 @@ const Works = ({ isItemOpened, setOpenedItem }: Props) => {
       setOpenedItem={setOpenedItem}
       isScrollable={isScrollable}
     >
-      <div className={classNames(styles.works, "flex items-center")}>
-        <div className="flex flex-wrap justify-center items-center w-10/12 h-3/4 m-auto">
+      <div className={classNames(styles.works, "flex items-center w-full")}>
+        <div className={classNames(styles.works__wrapper, "flex flex-wrap justify-center items-center w-10/12 h-3/4 mx-auto")}>
           {projectItems.map(
             (
               { logo, alt, title, location, description, tech, website },
@@ -162,7 +162,7 @@ const Works = ({ isItemOpened, setOpenedItem }: Props) => {
                 key={index}
                 className={classNames(
                   styles.works__container,
-                  "flex flex-col justify-center items-center xs:p-5 xs:m-5 m-3"
+                  "flex flex-col justify-center items-center"
                 )}
               >
                 <div className={classNames(styles.works__logo, "mb-8")}>
@@ -174,7 +174,7 @@ const Works = ({ isItemOpened, setOpenedItem }: Props) => {
                   <span>{location}</span>
                 </div>
                 <div className="w-full mb-8">
-                  <p className="mb-8 font-bold">{description}</p>
+                  <p className={classNames(styles.works__description, "mb-8 font-bold")}>{description}</p>
                   <div className="flex flex-wrap italic">
                     {tech.map(({ type }, index) => (
                       <span

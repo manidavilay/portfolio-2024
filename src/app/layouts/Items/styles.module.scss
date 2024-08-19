@@ -1,16 +1,21 @@
 @import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
 
 .itemsLayout {
     z-index: 1;
     bottom: 0;
     width: 100%;
-    height: 88vh;
+    height: 88dvh;
     background-color: $dark-blue;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     transform: translateY(100%);
     transition: all 1s ease-in-out;
     opacity: 0;
+
+    @include tablet {
+        overflow-y: scroll;
+    }
 
     &.hasTranslated {
         transform: translateY(0%);

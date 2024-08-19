@@ -16,17 +16,17 @@
       @include typingAnimation(2.5s, 35, 1s, 6, 2.5s, 2.5s, 0s);
       --target-width: 135px;
 
-      @include mobile-m {
-        --target-width: 105px;
+      @include mobile-l {
+        --target-width: 108px;
       }
     }
 
     &.subtitleText {
       @include typingAnimation(2.5s, 35, 1s, 6, 2.5s, 2.5s, 2.5s);
-      --target-width: 200px;
+      --target-width: 225px;
 
-      @include mobile-m {
-        --target-width: 171px;
+      @include mobile-l {
+        --target-width: 170px;
       }
     }
 
@@ -34,17 +34,17 @@
       @include typingAnimation(2.5s, 35, 1s, 6, 2.75s, 1.45s, 5s);
       --target-width: 315px;
 
-      @include mobile-m {
-        --target-width: 227px;
+      @include mobile-l {
+        --target-width: 250px;
       }
     }
 
     &.headphonesText {
       @include typingAnimation(2.5s, 35, 1s, infinite, null, null, 7.5s);
-      --target-width: 257px;
+      --target-width: 258px;
 
-      @include mobile-m {
-        --target-width: 185px;
+      @include mobile-l {
+        --target-width: 205px;
       }
     }
   }

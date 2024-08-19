@@ -45,14 +45,14 @@ const Home = () => {
         />
       )}
       <section className={classNames(styles.home, "absolute overflow-hidden")}>
-        <div className={styles.home__container}>
+        {/* <div className={styles.home__container}> */}
           <Header
             isItemOpened={isItemOpened}
             openedItem={openedItem}
             setOpenedItem={setOpenedItem}
           />
-          <div className="relative flex flex-col justify-between w-10/12 m-auto">
-            <div className={classNames(styles.home__titleWrapper)}>
+          <div className={classNames(styles.home__contentWrapper, "absolute flex flex-col w-10/12 m-auto")}>
+            <div className={classNames(styles.home__titleWrapper, "absolute")}>
               {!isLoadingVisible && (
                 <>
                   <TypingAnimationLayout type="titleText">
@@ -61,7 +61,7 @@ const Home = () => {
                     </h1>
                   </TypingAnimationLayout>
                   <TypingAnimationLayout type="subtitleText">
-                    <h2 className={classNames(styles.home__subtitle, "mt-1")}>
+                    <h2 className={classNames(styles.home__subtitle, "mt-0 md:mt-2")}>
                       front-end web developer
                     </h2>
                   </TypingAnimationLayout>
@@ -71,7 +71,7 @@ const Home = () => {
             <div
               className={classNames(
                 styles.home__textWrapper,
-                "flex flex-col items-end"
+                "absolute flex flex-col items-end"
               )}
             >
               {!isLoadingVisible && (
@@ -103,7 +103,7 @@ const Home = () => {
             />
           )}
           <Footer />
-        </div>
+        {/* </div> */}
       </section>
     </main>
   );

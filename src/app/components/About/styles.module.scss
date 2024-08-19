@@ -2,6 +2,16 @@
 @import "../../utils/mixins.scss";
 
 .about {
+    &__container {
+        @include tablet {
+            padding: 70px 0;
+        }
+
+        @include mobile-l {
+            padding: 50px 0;
+        }
+    }
+
     &__avatarBlock {
         width: 300px;
         height: 390px;
@@ -38,16 +48,16 @@
             margin-bottom: 30px;
         }
 
-        @include tablet {
-            height: 40vh;
-        }
+        // @include tablet {
+        //     height: 40vh;
+        // }
 
-        @include mobile-l {
-            height: 35vh;
-        }
+        // @include mobile-l {
+        //     height: 35vh;
+        // }
 
         @include mobile-m {
-            height: 32vh;
+            // height: 32vh;
             font-size: 13px;
         }
     }

@@ -18,15 +18,6 @@ const Works = ({ isItemOpened, setOpenedItem }: Props) => {
 
   const projectItems = [
     {
-      logo: "/assets/logos/dbd-logo.svg",
-      alt: "Dead By Daylight logo",
-      title: "Dead By Daylight",
-      location: "personal project",
-      description: "static website about a multiplayer (4 vs 1) horror game",
-      tech: [{ type: "vue.js" }, { type: "nuxt" }, { type: "vuetify" }],
-      website: "https://deadbydaylight.manidavilay.com/",
-    },
-    {
       logo: "/assets/logos/virtuo-logo.svg",
       alt: "Virtuo logo",
       title: "Govirtuo",
@@ -55,6 +46,15 @@ const Works = ({ isItemOpened, setOpenedItem }: Props) => {
       website: "https://weatherapp.manidavilay.com/",
     },
     {
+      logo: "/assets/logos/dbd-logo.svg",
+      alt: "Dead By Daylight logo",
+      title: "Dead By Daylight",
+      location: "personal project",
+      description: "static website about a multiplayer (4 vs 1) horror game",
+      tech: [{ type: "vue.js" }, { type: "nuxt" }, { type: "vuetify" }],
+      website: "https://deadbydaylight.manidavilay.com/",
+    },
+    {
       logo: "/assets/logos/sineora-logo.svg",
       alt: "Sineora logo",
       title: "Sineora",
@@ -69,6 +69,33 @@ const Works = ({ isItemOpened, setOpenedItem }: Props) => {
         { type: "vue.js" },
       ],
       website: "https://www.sineora.com/en/about-us",
+    },
+    {
+      logo: "/assets/logos/react-logo.svg",
+      alt: "React logo",
+      title: "React Calculator",
+      location: "personal project",
+      description: "simple calculator made in React and TypeScript",
+      tech: [{ type: "react.js" }, { type: "typescript" }],
+      website: "https://simplecalculator.manidavilay.com/",
+    },
+    {
+      logo: "/assets/logos/react-logo.svg",
+      alt: "React logo",
+      title: "Text Analyzer Tool",
+      location: "personal project",
+      description: "exercise built by Abdul Basit in order to learn, improve and build new skills",
+      tech: [{ type: "react.js" }, { type: "typescript" }],
+      website: "https://textanalyzertool.manidavilay.com/"
+    },
+    {
+      logo: "/assets/logos/vite-logo.png",
+      alt: "Vite logo",
+      title: "Tasks List Tool",
+      location: "personal project",
+      description: "exercise built using React, Vite, and TypeScript, usage of Redux Toolkit and Material UI",
+      tech: [{ type: "react.js" }, { type: "typescript" }, { type: "vite" }, { type: "redux toolkit" }, { type: "material UI" }],
+      website: "https://taskslistmanagement.manidavilay.com/"
     },
     {
       logo: "/assets/logos/tv-logo.svg",
@@ -119,15 +146,6 @@ const Works = ({ isItemOpened, setOpenedItem }: Props) => {
         { type: "native javascript" },
       ],
       website: "https://www.opsone.net/",
-    },
-    {
-      logo: "/assets/logos/react-logo.svg",
-      alt: "React logo",
-      title: "React Calculator",
-      location: "personal project",
-      description: "simple calculator made in React and TypeScript",
-      tech: [{ type: "react.js" }, { type: "typescript" }],
-      website: "https://simplecalculator.manidavilay.com/",
     },
     {
       logo: "/assets/logos/cos-logo.svg",

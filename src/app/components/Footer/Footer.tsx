@@ -27,6 +27,12 @@ const Footer = () => {
       alt: "Manida Vilay's squared logo",
       text: "download resume here",
     },
+    {
+      href: "https://github.com/manidavilay",
+      src: "github.svg",
+      alt: "GitHub logo",
+      text: "github",
+    },
   ];
 
   return (
